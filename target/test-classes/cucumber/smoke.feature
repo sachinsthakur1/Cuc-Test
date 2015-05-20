@@ -5,8 +5,10 @@ Feature: Smoke
 
   Scenario: My First Scenario
     Given I go to zoo adoption website
-    When I click on animal adoption link
-    Then I see no Animals available message
+    When I click on contact link
+    And I populated the contact details
+    Then I should be on contact confirmation page
+    
 
 
 

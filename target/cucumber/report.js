@@ -33,21 +33,21 @@ formatter.match({
   "location": "Smoke_feature.i_go_to_zoo_adoption_website()"
 });
 formatter.result({
-  "duration": 95974221,
+  "duration": 92122389,
   "status": "passed"
 });
 formatter.match({
   "location": "Smoke_feature.i_click_on_animal_adoption_link()"
 });
 formatter.result({
-  "duration": 162968,
+  "duration": 131246,
   "status": "passed"
 });
 formatter.match({
   "location": "Smoke_feature.i_see_no_Animals_available_message()"
 });
 formatter.result({
-  "duration": 305721,
+  "duration": 153949,
   "status": "passed"
 });
 });

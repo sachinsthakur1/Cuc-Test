@@ -1,24 +1,44 @@
 package com.stepdefination;
 
-import cucumber.api.PendingException;
+import junit.framework.Assert;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
 public class Smoke_feature {
+	
+	WebDriver driver = null;
 
 	@Given("^I go to zoo adoption website$")
 	public void i_go_to_zoo_adoption_website() throws Throwable {
-		System.out.println("I go to zoo adoption website");
+		driver = new FirefoxDriver();
+		driver.navigate().to("http://www.thetestroom.com/webapp");
 	}
 
-	@When("^I click on animal adoption link$")
-	public void i_click_on_animal_adoption_link() throws Throwable {
-	    System.out.println("I click on animal adoption link");
+	@When("^I click on contact link$")
+	public void i_click_on_contact_link() throws Throwable {
+		driver.findElement(By.id("contact_link")).click();
 	}
 
-	@Then("^I see no Animals available message$")
-	public void i_see_no_Animals_available_message() throws Throwable {
-	    System.out.println("I see no Animals available message");
+	@When("^I populated the contact details$")
+	public void i_populated_the_contact_details() throws Throwable {
+		driver.findElement(By.name("name_field")).sendKeys("Test Name");
+		driver.findElement(By.id("rinfo")).click();
+		driver.findElement(By.id("cdona")).click();
+		driver.findElement(By.id("slider-1")).sendKeys("£30");;
+		driver.findElement(By.name("address_field")).sendKeys("Test Address");
+		driver.findElement(By.name("postcode_field")).sendKeys("Test Postcode");
+		driver.findElement(By.name("email_field")).sendKeys("Testemail@testemail.com");
+		driver.findElement(By.id("submit_message")).click();
+	}
+
+	@Then("^I should be on contact confirmation page$")
+	public void i_should_be_on_contact_confirmation_page() throws Throwable {
+		Assert.assertEquals("You are not on contact_confirm page", driver.getTitle().equals("contact_confirm"));
 	}
 }
