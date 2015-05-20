@@ -9,9 +9,4 @@ Feature: Smoke
     And I populated the contact details
     Then I should be on contact confirmation page
     
-
-
-
-
-
-
+   
