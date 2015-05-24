@@ -7,11 +7,11 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(
 		//tags = {"@mustAnswerToContinue"},
-        format = { "pretty", "html:target/cucumber" },
+        format = { "pretty", "html:target/cucumber/html","json:target/cucumber/json/report.json" },
         glue = {"com.stepdefination"},
-        features = "classpath:cucumber/"
+        features = "classpath:cucumber/ParameterHandlingExample.feature"
 )
 
-public class AppTest {
+public class RunnerTest {
 
 }

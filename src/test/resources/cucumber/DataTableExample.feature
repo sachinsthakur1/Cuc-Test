@@ -7,6 +7,11 @@ Feature: Smoke
     Given I go to zoo adoption website
     When I click on contact link
     And I populated the contact details
+    | Field    | Value                 |
+    | Name     | Adam                  |
+    | Address  | Adam address          |
+    | Postcode | 201201                |
+    | EmailId  | Subcribe@testteam.com |
     Then I should be on contact confirmation page
     
    
