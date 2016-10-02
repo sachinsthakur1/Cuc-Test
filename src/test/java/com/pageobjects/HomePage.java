@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 public class HomePage extends PageAbstract{
 
 	public HomePage(WebDriver driver) {
-		super(driver);
+		super(driver);  
 	}
 
 	public ContactPage navigateToContactPage()
