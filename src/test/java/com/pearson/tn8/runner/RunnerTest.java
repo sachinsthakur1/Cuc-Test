@@ -12,6 +12,6 @@ import org.junit.runner.RunWith;
         features = "classpath:cucumber/ParameterHandlingExample.feature"
 )
 
-public class RunnerTest {  
+public class RunnerTest {
 
-}                 
+}                   
